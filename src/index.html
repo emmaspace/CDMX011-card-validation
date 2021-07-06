@@ -6,8 +6,15 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header></header>
-    <main></main>
+    <header>
+      <h1>¿Mi tarjeta es válida?</h1>
+      <p>Física o virtual, ¡vamos a checar!</p>
+    </header>
+    <main>
+        <label for="cardInput">Ingresa tu número de tarjeta</label>
+        <input type="text" id="cardInput" name="cardInput" placeholder="xxxxxxxxxxxx0000" title="Por favor ingresa un número de 16 dígitos" pattern="[0-9]{16}" aria-label="Dígitos de tarjeta" autocomplete="off" required>
+        <button id="button">Verificar</button>
+    </main>
     <footer></footer>
     <script src="index.js" type="module"></script>
   </body>
