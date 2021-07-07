@@ -1,0 +1,85 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&family=Questrial&display=swap');
+
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    padding: 10vh 0;
+    background: #e5e5e5;
+}
+
+h1, p{
+    text-align: center;
+    color: #242424;
+    font-family: 'Questrial', sans-serif;
+}
+
+h1{
+    font-size: 3em;
+}
+
+p{
+    margin: 1.5em;
+    font-size: 2em;
+}
+
+.card{
+    background: #242424;
+    box-shadow: inset 20px 20px 40px #3A3A3A,
+                inset -20px -20px 40px rgba(0, 0, 0, 0.8);
+    height: 25em;
+    width: 45em;
+    margin: 0 auto;
+    border-radius: 2em;
+}
+
+svg{
+    display: inline-block;
+    margin-left: 4em;
+    margin-bottom: 3.5em;
+}
+
+div{
+    color: #EDF2F4;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    width: 75%;
+    display: inline-block;
+}
+
+label, input{
+    display: block;
+    font-size: 1.5em;
+}
+
+label{
+    padding: 4em 0 1em;
+}
+
+input{
+    margin: 0 auto 3em;
+}
+
+button{
+    padding: 0.5em 1em;
+    background: #CCD1D2;
+    border: none;
+    border-radius: 5em;
+    font-size: 1.8em;
+    color: #242424;
+    font-family: 'Montserrat Alternates', sans-serif;
+    box-shadow: inset 10px 10px 20px rgba(255, 255, 255, 0.25),
+                inset -10px -10px 20px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: inset 10px 10px 20px rgba(255, 255, 255, 0.25),
+                inset -10px -10px 20px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: inset 10px 10px 20px rgba(255, 255, 255, 0.25),
+                inset -10px -10px 20px rgba(0, 0, 0, 0.25);
+}

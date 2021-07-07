@@ -1,21 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Tarjeta de crédito válida</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>¿Mi tarjeta es válida?</h1>
-      <p>Física o virtual, ¡vamos a checar!</p>
-    </header>
-    <main>
-        <label for="cardInput">Ingresa tu número de tarjeta</label>
-        <input type="text" id="cardInput" name="cardInput" placeholder="xxxxxxxxxxxx0000" title="Por favor ingresa un número de 16 dígitos" pattern="[0-9]{16}" aria-label="Dígitos de tarjeta" autocomplete="off" required>
-        <button id="button">Verificar</button>
-    </main>
-    <footer></footer>
-    <script src="index.js" type="module"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>Tarjeta de crédito válida</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Icons made by Freepik www.freepik.com from Flaticon www.flaticon.com -->
+</head>
+
+<body>
+  <header>
+    <h1>¿Mi tarjeta es válida?</h1>
+    <p>No importa si es física o virtual, aquí lo puedes comprobar</p>
+  </header>
+  <main class="card">
+    <svg width="95" height="80" viewbox="0 0 130 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M114.306 109.93H15.6942C7.02654 109.93 0 102.903 0 94.2354V15.7646C0 7.09694 7.02654 0.0704041 15.6942 0.0704041H114.306C122.973 0.0704041 130 7.09694 130 15.7646V94.2354C130 102.903 122.973 109.93 114.306 109.93Z"
+        fill="#CED4DA" />
+      <path d="M122.153 55V74.6177L106.459 86.3883V43.2293L122.153 55Z" fill="#969CA3" />
+      <path d="M65 94.2354V47.1529H114.306V74.6177L65 94.2354Z" fill="#6C757D" />
+      <path d="M122.153 35.3823V55H114.306L102.535 23.6116L122.153 35.3823Z" fill="#6C757D" />
+      <path d="M114.306 35.3823V55H65V15.7646L114.306 35.3823Z" fill="#495057" />
+      <path d="M65 94.238C64.9529 94.2354 7.84705 74.6177 7.84705 74.6177V55L65 39.3058V94.238Z" fill="#495057" />
+      <path d="M65 15.7646V55H7.84705V35.3823L65 15.7646Z" fill="#6C757D" />
+      <path
+        d="M114.306 74.6177L106.459 102.082H114.306C118.632 102.082 122.153 98.5617 122.153 94.2354V74.6177H114.306Z"
+        fill="#495057" />
+      <path
+        d="M114.306 7.91751H106.459L114.306 35.3823H122.153V15.7646C122.153 11.4382 118.632 7.91751 114.306 7.91751Z"
+        fill="#495057" />
+      <path
+        d="M7.84705 74.6177V94.2354C7.84705 98.5617 11.3678 102.082 15.6941 102.082H47.344L65 93.4899L82.6559 102.082H106.459C110.785 102.082 114.306 98.5617 114.306 94.2354V74.6177H7.84705Z"
+        fill="#969CA3" />
+      <path
+        d="M106.459 7.91751H15.6941C11.3678 7.91751 7.84705 11.4382 7.84705 15.7646V35.3823H114.306V15.7646C114.306 11.4382 110.785 7.91751 106.459 7.91751Z"
+        fill="#969CA3" />
+      <path
+        d="M79.2372 24.705C81.3454 23.1984 82.6559 20.8207 82.6559 18.2286V7.91751H47.3441V18.2286C47.3441 20.8207 48.6545 23.1984 50.7628 24.705C52.3086 25.8115 53.3 27.6477 53.2268 29.7115C53.1143 32.8529 50.475 35.3091 47.3441 35.3797V74.6203C50.475 74.6909 53.1143 77.1471 53.2268 80.2885C53.3 82.3523 52.3086 84.1885 50.7628 85.295C48.6545 86.8016 47.3441 89.1793 47.3441 91.7714V102.082H82.6559V91.7714C82.6559 89.1793 81.3454 86.8016 79.2372 85.295C77.6913 84.1885 76.7 82.3523 76.7732 80.2885C76.8857 77.1471 79.5249 74.6909 82.6559 74.6203V35.3797C79.5249 35.3091 76.8857 32.8529 76.7732 29.7115C76.7 27.6477 77.6913 25.8115 79.2372 24.705Z"
+        fill="#ADB5BD" />
+    </svg>
+    <div>
+      <label for="cardInput">Ingresa tu número de tarjeta</label>
+      <input type="text" id="cardInput" name="cardInput" placeholder="xxxxxxxxxxxx0000"
+        title="Por favor ingresa un número de 16 dígitos" pattern="[0-9]{16}" aria-label="Dígitos de tarjeta"
+        autocomplete="off" required>
+      <button id="button">Verificar</button>
+      </div>
+  </main>
+  <footer></footer>
+  <script src="index.js" type="module"></script>
+</body>
+
 </html>

@@ -6,7 +6,7 @@ const validator = {
           .map((i) => i = parseInt(i));
     
     //Multiplicar cada número en posición par por dos
-    let twoDigitNumberArray = [];
+    let twoDigitResultArray = [];
     for (let i = 1; i < reversedCardNumberArray.length; i += 2) {
 
       reversedCardNumberArray[i] *= 2;
@@ -14,10 +14,10 @@ const validator = {
       //Si el elemento tiene más de un dígito, sumar los dígitos
       if (reversedCardNumberArray[i] > 9) {
 
-        twoDigitNumberArray = reversedCardNumberArray[i].toString()
+        twoDigitResultArray = reversedCardNumberArray[i].toString()
              .split("").map((i) => i = parseInt(i));
         
-        reversedCardNumberArray[i] = twoDigitNumberArray
+        reversedCardNumberArray[i] = twoDigitResultArray
               .reduce((accumulator, currentValue) =>
                       accumulator + currentValue, 0);
       }
