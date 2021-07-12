@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tarjeta de crédito válida</title>
   <link rel="stylesheet" href="style.css" />
   <!-- Icons made by Freepik www.freepik.com from Flaticon www.flaticon.com -->
@@ -13,8 +14,8 @@
     <h1>¿Mi tarjeta es válida?</h1>
     <p>No importa si es física o virtual, aquí lo puedes comprobar</p>
   </header>
-  <main class="card">
-    <svg width="95" height="80" viewbox="0 0 130 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <main class="card gridCard">
+    <svg viewbox="0 0 130 110" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M114.306 109.93H15.6942C7.02654 109.93 0 102.903 0 94.2354V15.7646C0 7.09694 7.02654 0.0704041 15.6942 0.0704041H114.306C122.973 0.0704041 130 7.09694 130 15.7646V94.2354C130 102.903 122.973 109.93 114.306 109.93Z"
         fill="#CED4DA" />
@@ -40,15 +41,46 @@
         d="M79.2372 24.705C81.3454 23.1984 82.6559 20.8207 82.6559 18.2286V7.91751H47.3441V18.2286C47.3441 20.8207 48.6545 23.1984 50.7628 24.705C52.3086 25.8115 53.3 27.6477 53.2268 29.7115C53.1143 32.8529 50.475 35.3091 47.3441 35.3797V74.6203C50.475 74.6909 53.1143 77.1471 53.2268 80.2885C53.3 82.3523 52.3086 84.1885 50.7628 85.295C48.6545 86.8016 47.3441 89.1793 47.3441 91.7714V102.082H82.6559V91.7714C82.6559 89.1793 81.3454 86.8016 79.2372 85.295C77.6913 84.1885 76.7 82.3523 76.7732 80.2885C76.8857 77.1471 79.5249 74.6909 82.6559 74.6203V35.3797C79.5249 35.3091 76.8857 32.8529 76.7732 29.7115C76.7 27.6477 77.6913 25.8115 79.2372 24.705Z"
         fill="#ADB5BD" />
     </svg>
-    <div>
+    <form action="" class="visible" id="cardForm">
       <label for="cardInput">Ingresa tu número de tarjeta</label>
-      <input type="text" id="cardInput" name="cardInput" placeholder="xxxxxxxxxxxx0000"
-        title="Por favor ingresa un número de 16 dígitos" pattern="[0-9]{16}" aria-label="Dígitos de tarjeta"
-        autocomplete="off" required>
+      <input type="text" id="cardInput" name="cardInput" placeholder="#### #### #### 0000"
+        title="Por favor ingresa un número de 16 dígitos sin guiones ni espacios" aria-label="Dígitos de tarjeta"
+        autocomplete="off" size="25" required>
       <button id="button">Verificar</button>
-      </div>
+    </form>
+    <section class="invisible" id="validCard">
+      <h1>¡Tu tarjeta es válida!</h1>
+      <p>
+        <span>La tarjeta</span>
+        <span class="iconAndMaskedNumber">
+          <svg width="74" height="74" viewbox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M37 0.333344C16.75 0.333344 0.333374 16.75 0.333374 37C0.333374 57.25 16.75 73.6667 37 73.6667C57.25 73.6667 73.6667 57.25 73.6667 37C73.6667 16.75 57.25 0.333344 37 0.333344ZM52.8934 30.8C53.186 30.4655 53.4088 30.0758 53.5487 29.6539C53.6885 29.232 53.7425 28.7864 53.7076 28.3433C53.6727 27.9002 53.5495 27.4686 53.3453 27.0738C53.1411 26.679 52.86 26.329 52.5185 26.0445C52.1771 25.7599 51.7822 25.5466 51.357 25.4169C50.9319 25.2872 50.4851 25.2439 50.043 25.2894C49.6009 25.335 49.1723 25.4685 48.7825 25.6821C48.3928 25.8957 48.0496 26.1852 47.7734 26.5333L33.44 43.73L26.0234 36.31C25.3947 35.7028 24.5527 35.3668 23.6787 35.3744C22.8047 35.382 21.9687 35.7326 21.3506 36.3506C20.7326 36.9686 20.3821 37.8047 20.3745 38.6787C20.3669 39.5527 20.7028 40.3947 21.31 41.0233L31.31 51.0233C31.6376 51.3507 32.0297 51.6062 32.4614 51.7735C32.8932 51.9409 33.355 52.0165 33.8176 51.9955C34.2802 51.9745 34.7333 51.8573 35.1481 51.6515C35.5629 51.4457 35.9302 51.1557 36.2267 50.8L52.8934 30.8Z"
+              fill="#00A410" aria-hidden="true" />
+          </svg>
+          <span id="validMaskedCardNumber"></span>
+        </span>
+        <span>es válida</span>
+      </p>
+      <button id="validCardNewVerification">Nueva verificación</button>
+    </section>
+    <section class="invisible" id="invalidCard">
+      <h1>Tu tarjeta es inválida</h1>
+      <p>
+        <span>La tarjeta</span>
+        <span class="iconAndMaskedNumber">
+          <svg width="68" height="68" viewbox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M57.6668 10.3333C44.6668 -2.66666 23.3335 -2.66666 10.3335 10.3333C-2.6665 23.3333 -2.6665 44.6667 10.3335 57.6667C23.3335 70.6667 44.3335 70.6667 57.3335 57.6667C70.3335 44.6667 70.6668 23.3333 57.6668 10.3333V10.3333ZM43.3335 48L34.0002 38.6667L24.6668 48L20.0002 43.3333L29.3335 34L20.0002 24.6667L24.6668 20L34.0002 29.3333L43.3335 20L48.0002 24.6667L38.6668 34L48.0002 43.3333L43.3335 48V48Z"
+              fill="#C61313" />
+          </svg>
+          <span id="invalidMaskedCardNumber"></span>
+        </span>
+        <span>es inválida</span>
+      </p>
+      <button id="invalidCardNewVerification">Nueva verificación</button>
+    </section>
   </main>
-  <footer></footer>
   <script src="index.js" type="module"></script>
 </body>
 
