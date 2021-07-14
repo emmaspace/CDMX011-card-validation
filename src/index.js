@@ -9,6 +9,7 @@ const validMaskedCardNumber = document.getElementById("validMaskedCardNumber");
 const invalidMaskedCardNumber = document.getElementById("invalidMaskedCardNumber");
 const validCardNewVerification = document.getElementById("validCardNewVerification");
 const invalidCardNewVerification = document.getElementById("invalidCardNewVerification");
+const resetButton = document.getElementById("resetButton");
 
 let cardNumberArray = [];
 let cardNumber = "";
@@ -22,12 +23,7 @@ function saveInputInfo(event){
     typedKey = event.key;
     typedKeyCode = event.keyCode;
     if(typedKey == "Backspace"){
-        if (cardInput.getSelection) {
-            console.log("Hay texto seleccionado");
-            cardNumberArray.pop(cardNumberArray[cardNumberArray.length - 1]);
-        } else {
-            cardNumberArray.pop(cardNumberArray[cardNumberArray.length - 1]);
-        }
+        cardNumberArray.pop(cardNumberArray[cardNumberArray.length - 1]);
     }else if((57 >= typedKeyCode) && ( typedKeyCode>= 48)){
         cardNumberArray.push(typedKey); 
     }else {
@@ -95,7 +91,6 @@ validCardNewVerification.addEventListener("click", newVerification);
 invalidCardNewVerification.addEventListener("click", newVerification);
 
 function newVerification() {
-    console.log(cardNumber);
     if (validator.isValid(cardNumber) == true) {
         cardForm.classList.toggle("visible");
         cardForm.classList.toggle("invisible");
@@ -110,6 +105,18 @@ function newVerification() {
     cardNumberArray = [""];
     cardInput.value = "";
 }
+
+//Evitar seleccionar dentro del input
+cardInput.addEventListener("select", () => window.getSelection().empty());
+
+//Resetear variables al usar botón de reset
+resetButton.addEventListener("click", reset);
+
+function reset() {
+    cardNumberArray = [];
+    cardNumber = "";
+}
+
 
 //button.addEventListener("click", function (event) { event.preventDefault });
 

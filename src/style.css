@@ -169,11 +169,8 @@ svg{
     display: inline-block;
 }
 
-label, input{
-    display: block;
-}
-
 label{
+    display: block;
     font-size: 2em;
 }
 
@@ -190,7 +187,16 @@ input{
     text-align: center;
 }
 
-button{
+#resetButton{
+    background: none;
+    border: none;
+    position: relative;
+    -webkit-transform: translateY(10%);
+    -ms-transform: translateY(10%);
+    transform: translateY(10%);
+}
+
+#button{
     background: #CCD1D2;
     border: none;
     padding: 0.5em 1em;
@@ -207,7 +213,7 @@ button{
     inset -10px -10px 20px rgba(0, 0, 0, 0.25);
 }
 
-button:active{
+#button:active{
     background: #B4B4B4;
     box-shadow: inset 10px 10px 20px #565656,
     inset -10px -10px 20px #565656;

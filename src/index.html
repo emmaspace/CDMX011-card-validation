@@ -45,7 +45,19 @@
       <label for="cardInput">Ingresa tu número de tarjeta</label>
       <input type="text" id="cardInput" name="cardInput" placeholder="#### #### #### 0000"
         title="Por favor ingresa un número de 16 dígitos sin guiones ni espacios" aria-label="Dígitos de tarjeta"
-        autocomplete="off" size="25" required>
+        autocomplete="off" size="22" required>
+      <button type="reset" id="resetButton" aria-label="Limpiar campo">
+        <svg width="44" height="32" viewbox="0 0 44 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M38.5 1H14.125L1 16L14.125 31H38.5C39.4946 31 40.4484 30.6049 41.1516 29.9016C41.8549 29.1984 42.25 28.2446 42.25 27.25V4.75C42.25 3.75544 41.8549 2.80161 41.1516 2.09835C40.4484 1.39509 39.4946 1 38.5 1V1Z"
+            stroke="#E5E5E5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M32.875 10.375L21.625 21.625" stroke="#E5E5E5" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+          <path d="M21.625 10.375L32.875 21.625" stroke="#E5E5E5" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+
+      </button>
       <button id="button">Verificar</button>
     </form>
     <section class="invisible" id="validCard">
